@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727121444) do
+ActiveRecord::Schema.define(version: 20160118102513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -427,7 +427,7 @@ ActiveRecord::Schema.define(version: 20150727121444) do
   add_index "spree_product_properties", ["product_id"], name: "index_product_properties_on_product_id", using: :btree
 
   create_table "spree_products", force: true do |t|
-    t.string   "name",                                                 default: "",    null: false
+    t.string   "name",                                         default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -439,40 +439,40 @@ ActiveRecord::Schema.define(version: 20150727121444) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_description"
-    t.string   "brand_name"
-    t.string   "image_name"
-    t.integer  "pack_size"
-    t.string   "kit_flag"
-    t.string   "superseded_to"
-    t.integer  "alternative_group"
-    t.integer  "cat_page_no"
-    t.integer  "mini_cat_page_no"
-    t.string   "manufacturer_name"
-    t.integer  "manufacturer_acc_no"
-    t.string   "manufacturer_code"
-    t.string   "traded_pack_bar_code"
-    t.integer  "spicer_xref"
-    t.integer  "boss_code"
-    t.integer  "major_group"
-    t.integer  "minor_group"
-    t.decimal  "trade_price"
-    t.string   "retail_to_trade"
-    t.integer  "vat_code"
-    t.string   "product_matrix"
-    t.integer  "cat_price_discount"
-    t.string   "status_code"
-    t.integer  "nett_price_indicator"
-    t.string   "product_returnable"
-    t.integer  "customer_logistics_lead_time"
-    t.integer  "dealer_logistics_lead_time"
-    t.string   "delta_status"
-    t.string   "status_description"
-    t.decimal  "nett_cost"
-    t.decimal  "avg_rating",                   precision: 7, scale: 5, default: 0.0,   null: false
-    t.integer  "reviews_count",                                        default: 0,     null: false
-    t.boolean  "special",                                              default: false
-    t.boolean  "featured",                                             default: false
-    t.boolean  "latest",                                               default: false
+    t.decimal  "avg_rating",           precision: 7, scale: 5, default: 0.0,   null: false
+    t.integer  "reviews_count",                                default: 0,     null: false
+    t.boolean  "special",                                      default: false
+    t.boolean  "featured",                                     default: false
+    t.boolean  "latest",                                       default: false
+    t.string   "ts_code"
+    t.string   "live"
+    t.string   "detail"
+    t.string   "rrp"
+    t.string   "sell"
+    t.string   "page"
+    t.string   "colour"
+    t.string   "weight"
+    t.string   "bar_code"
+    t.string   "box_size"
+    t.string   "short_oem_code"
+    t.string   "daily_stock"
+    t.string   "min"
+    t.string   "max"
+    t.string   "image_url"
+    t.string   "oem_code"
+    t.string   "pack"
+    t.string   "vow_oem"
+    t.string   "spicers_oem_code"
+    t.string   "vow_compat"
+    t.string   "spicers"
+    t.string   "brand"
+    t.string   "manufacturer"
+    t.string   "product_type"
+    t.string   "group"
+    t.string   "category"
+    t.string   "chip_issue"
+    t.string   "machine_models"
+    t.string   "keywords"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on", using: :btree
